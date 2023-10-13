@@ -10,6 +10,7 @@ import AreaView from './pages/AreaView/AreaView';
 import Alphabet from './pages/Alphabet/Alphabet';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import LoginView from './pages/Login/LoginView';
 import './App.css';
 
 export default function App() {
@@ -26,6 +27,7 @@ export default function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/:id' element={<RecipeDetailView favorites={favorites} setFavorites={setFavorites} />} />
+        <Route path='/login' element={<LoginView />} />
         <Route path='/favorites' element={<Favorites favorites={favorites} />} />
         <Route path='/category' element={<Categories />} />
         <Route path='/category/:category' element={<CategoryView />} />
