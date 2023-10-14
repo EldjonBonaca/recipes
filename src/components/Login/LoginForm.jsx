@@ -16,7 +16,7 @@ function LoginForm() {
         const user = data.find(x => email === x.email)
         if(user && user.password === password){
             setLoginError(null)
-            navigate('/dashboard')
+            navigate('/favorites')
         }else{
             setLoginError("Incorrect Credentials")
         }

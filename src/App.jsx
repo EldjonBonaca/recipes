@@ -12,6 +12,7 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import LoginView from './pages/Login/LoginView';
 import './App.css';
+import PrivateRoutes from './utils/PrivateRoutes';
 
 export default function App() {
   const [favorites, setFavorites] = useState([]);
@@ -26,9 +27,11 @@ export default function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/:id' element={<RecipeDetailView favorites={favorites} setFavorites={setFavorites} />} />
         <Route path='/login' element={<LoginView />} />
-        <Route path='/favorites' element={<Favorites favorites={favorites} />} />
+        <Route path='/:id' element={<RecipeDetailView favorites={favorites} setFavorites={setFavorites} />} />
+        <Route element={<PrivateRoutes/>}>
+          <Route path='/favorites' element={<Favorites favorites={favorites} />} />
+        </Route>
         <Route path='/category' element={<Categories />} />
         <Route path='/category/:category' element={<CategoryView />} />
         <Route path='/area' element={<Areas />} />
