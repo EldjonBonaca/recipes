@@ -39,10 +39,8 @@ export default function Header (props) {
         <Link to='/favorites'>
           <img className='svg heart-svg' src="/filled-heart.svg" />
         </Link>
-        <div >
           <button className='login-svg'  onClick={() => navigate('/login')}>Login</button>
           <Logout />
-        </div>
       </div>
         
     </header>
