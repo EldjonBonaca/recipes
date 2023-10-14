@@ -21,10 +21,10 @@ export default function Header (props) {
       <div className='header-elements'>
         <div>
           <Link to='/'>
-            <img className='svg logo-svg' src="/search.svg" />
+            <img className='svg logo-svg' src="/home.svg" />
           </Link>
           <Link to='/category'>
-            <img className='svg logo-svg' src="/category.svg" />
+            <img className='svg logo-svg' src="/book-open.svg" />
           </Link>
           <Link to='/area'>
             <img className='svg logo-svg' src="/area.svg" />
@@ -39,8 +39,10 @@ export default function Header (props) {
         <Link to='/favorites'>
           <img className='svg heart-svg' src="/filled-heart.svg" />
         </Link>
-        <button onClick={() => navigate('/login')}>Login</button>
-        <Logout />
+        <div >
+          <button className='login-svg'  onClick={() => navigate('/login')}>Login</button>
+          <Logout />
+        </div>
       </div>
         
     </header>
