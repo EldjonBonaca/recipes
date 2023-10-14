@@ -1,10 +1,9 @@
 import { Outlet, Navigate } from 'react-router-dom';
-import userLogin from '../components/Login/LoginForm';
 
 const useAuth = () => {
-    const user = { loggedIn: {userLogin} };
-    return user && user.loggedIn;
-}
+    const isAuthenticated = localStorage.getItem('isAuthenticated');
+    return isAuthenticated === 'true';
+};
 
 const PrivateRoutes = () => {
     const isAuth = useAuth();
