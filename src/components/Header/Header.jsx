@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { getRandom } from '../../utils/api';
 import './Header.css';
+import Logout from '../Logout';
 
 export default function Header (props) {
   const [random, setRandom] = useState(null);
@@ -38,13 +39,10 @@ export default function Header (props) {
         <Link to='/favorites'>
           <img className='svg heart-svg' src="/filled-heart.svg" />
         </Link>
-        <Link to='/login'>
-          <img className='svg heart-svg' src="/filled-heart.svg" />
-        </Link>
+        <button onClick={() => navigate('/login')}>Login</button>
+        <Logout />
       </div>
-      <div className='svg heart-svg'>
-        <button onClick={() => navigate('/login')}>Logout</button>
-      </div>
+        
     </header>
   );
 }

@@ -16,7 +16,6 @@ function LoginForm() {
         const user = data.find(x => email === x.email);
         if (user && user.password === password) {
             setLoginError(null);
-            // Save authentication status to localStorage
             localStorage.setItem('isAuthenticated', 'true');
             navigate('/favorites');
         } else {
