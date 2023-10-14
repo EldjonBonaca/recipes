@@ -1,7 +1,8 @@
-import { Outlet, Navigate } from 'react-router-dom'
+import { Outlet, Navigate } from 'react-router-dom';
+import userLogin from '../components/Login/LoginForm';
 
 const useAuth = () => {
-    const user = { loggedIn: false };
+    const user = { loggedIn: {userLogin} };
     return user && user.loggedIn;
 }
 

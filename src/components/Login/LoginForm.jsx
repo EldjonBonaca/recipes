@@ -11,11 +11,13 @@ function LoginForm() {
     const [password, setPassword] = useState('')
     const navigate = useNavigate()
     const [loginError, setLoginError] = useState(null)
+    const [userLogin, setUserLogin] = useState(false)
     const handleSubmit = (event) => {
         event.preventDefault()
         const user = data.find(x => email === x.email)
         if(user && user.password === password){
             setLoginError(null)
+            setUserLogin(true)
             navigate('/favorites')
         }else{
             setLoginError("Incorrect Credentials")
@@ -52,4 +54,4 @@ function LoginForm() {
   )
 }
 
-export default LoginForm
+export default LoginForm 
